@@ -19,7 +19,6 @@ body {
 }
 
 body {
-	width: 1200px;
 	margin: 0 auto;
 	font-family: PTSans;
 	font-size: 14px;
@@ -29,6 +28,15 @@ body {
 	text-transform: uppercase;
 	
 	background: url(../img/sedona.jpg) no-repeat 50% 0;
+}
+
+body[class="hotels"] {
+	background: url(../img/sedona-hotels-1200.jpg) no-repeat 50% 0;
+}
+
+body > .container {
+	width: 1200px;
+	margin: 0 auto;
 }
 
 h1 {
@@ -51,13 +59,14 @@ h2 {
 
 .main-header {
 	margin: 0;
-	padding: 0;
+	padding: 0 6%;
 	
 	outline: 1px solid yellow;
 	background-color: rgba(0, 0, 0, 0.5);
 }
 
 .main-nav ul {
+	display: table;
 	width:40%;
 	list-style: none;
 	white-space: nowrap;
@@ -67,8 +76,9 @@ h2 {
 }
 
 .main-nav li {
+	display: table-cell;
+	padding-top: 14px;
 	width: 50%;
-	height: 56px;
 	display: inline-block;
 	margin: 0;
 	
@@ -76,8 +86,6 @@ h2 {
 }
 
 .main-nav li a {
-	margin-left: auto;
-	margin-right: auto;
 	display: inline-block;
 	font-size: 14px;
 	line-height: 26px;
@@ -93,6 +101,7 @@ h2 {
 
 .main-nav .right-side {
 	float: right;
+	text-align: right;
 }
 
 .main-header .logo {
