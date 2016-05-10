@@ -123,9 +123,6 @@ h2 {
 /*==========‘”“≈–==========*/
 
 .main-footer {
-	display: block;
-	position: absolute;
-	bottom: 0;
 	width: 100%;
 	height: 120px;
 	background: #fff;
@@ -140,6 +137,11 @@ h2 {
 	height: 100%;
 	display: inline-block;
 	outline: 1px solid black;
+}
+
+body.index .main-footer {
+	position: absolute;
+	bottom: 0;
 }
 
 /*==========√À¿¬Õ¿ﬂ==========*/
@@ -310,6 +312,3 @@ main .block {
 	outline: 1px solid yellow;
 }
 
-.hotel-row:last-child {
-	margin-bottom: 120px;
-}
