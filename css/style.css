@@ -149,15 +149,14 @@ body.index .main-footer {
 .intro {
 	min-height: 508px;
 	width: 100%;
-	margin-bottom: 62px;
+	margin-bottom: 60px;
 	
 	outline: 1px solid yellow; 
 	background-color: rgba(0, 0, 0, 0.5);
 }
 
-main .block {
+.intro-text {
 	width: 500px;
-	min-height: 100px;
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: 54px;
@@ -165,6 +164,12 @@ main .block {
 	text-align: center;
 	
 	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.intro-text h2 {
+	padding-bottom: 13px;
+	color: red;
+	letter-spacing: 0.012em;
 }
 
 .features {
