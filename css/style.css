@@ -24,10 +24,9 @@ body {
 	font-size: 14px;
 	line-height: 21px;
 	color: #000;
+	background-color: #f2f2f2;
 	font-weight: normal;
 	text-transform: uppercase;
-	
-	background: url(../img/sedona.jpg) no-repeat 50% 0;
 }
 
 body[class="hotels"] {
@@ -38,6 +37,7 @@ body > .container {
 	position: relative;
 	width: 1200px;
 	margin: 0 auto;
+	background-color: #fff;
 }
 
 h1 {
@@ -59,7 +59,6 @@ h2 {
 	padding: 0 6%;
 	
 	outline: 1px solid yellow;
-	background-color: rgba(0, 0, 0, 0.5);
 }
 
 .main-header::after {
@@ -94,6 +93,7 @@ h2 {
 	font-weight: bold;
 	text-decoration: none;
 	color: #000;
+	
 	outline: 1px solid red;
 }
 
@@ -124,19 +124,59 @@ h2 {
 
 .main-footer {
 	width: 100%;
-	height: 120px;
 	background: #fff;
 	opacity: 0.8;
-	font-size: 0;
 	
 	outline: 1px solid red;
 }
 
-.main-footer .block {
+.main-footer::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.main-footer .footer-block {
 	width: 33.33%;
-	height: 100%;
-	display: inline-block;
+	float: left;
 	outline: 1px solid black;
+	text-align: center;
+}
+
+.main-footer .footer-block1 {
+	padding: 45px 0;
+}
+
+.main-footer .footer-block2 {
+	padding: 35px 0 24px;
+}
+
+.main-footer .footer-block3 {
+	padding: 38px 0 29px;
+}
+
+.footer-block:first-child span {
+	font-size: 20px;
+	font-weight: bold;
+	vertical-align: middle;
+}
+
+.footer-block .btn {
+	display: inline-block;
+	width: 47px;
+	height: 47px;
+}
+
+.footer-block .btn-tw {
+	background: rgba(129, 179, 210, 1) url("../img/social.png") no-repeat 15px 50%;
+}
+
+.footer-block .btn-fb {
+	background: rgba(129, 179, 210, 1) url("../img/social.png") no-repeat 50% 50%;
+}
+
+.footer-block .btn-yt {
+	background: rgba(129, 179, 210, 1) url("../img/social.png") no-repeat 117% 50%;
 }
 
 body.index .main-footer {
@@ -147,12 +187,17 @@ body.index .main-footer {
 /*==========√À¿¬Õ¿ﬂ==========*/
 
 .intro {
-	min-height: 508px;
 	width: 100%;
-	margin-bottom: 60px;
+	margin-bottom: 58px;
+	text-align: center;
+	vertical-align: middle;
+	padding: 76px 0;
+	background: url("../img/index/intro-mask.png"), #aaa url("../img/index/intro-background.jpg");
+	background-repeat: no-repeat;
+	background-position: 50% 100%, 50% 0;
+	background-size: 100% auto, 100%;
 	
-	outline: 1px solid yellow; 
-	background-color: rgba(0, 0, 0, 0.5);
+	outline: 1px solid yellow;
 }
 
 .intro-text {
@@ -162,50 +207,121 @@ body.index .main-footer {
 	margin-bottom: 54px;
 	outline: 1px solid	yellow;
 	text-align: center;
-	
-	background-color: rgba(0, 0, 0, 0.5);
 }
 
 .intro-text h2 {
 	padding-bottom: 13px;
-	color: red;
 	letter-spacing: 0.012em;
 }
 
 .features {
 	width: 100%;
-	min-height: 1098px;
 	margin-bottom: 54px;
 	
 	outline: 1px solid yellow;
-	background-color: rgba(0, 0, 0, 0.5);
 }
 
 .features-row {
 	width: 100%;
 	height: 256px;
 	font-size: 0;
+	background: #eee;
 	
 	outline: 1px solid yellow;
-}
-
-.features-row:nth-child(2) {
-	width: 100%;
-	height: 330px;
-	
-	outline: 1px solid red;
 }
 
 .features .feature {
 	width: 33.33%;
-	height: 100%;
 	display: inline-block;
+	vertical-align: top;
+	text-align: center;
+	font-size: 14px;
+	padding: 28px 0;
 	
 	outline: 1px solid yellow;
 }
 
+.feature h2{
+	display: inline-block;
+	text-align: center;
+	width: 151px;
+	line-height: 21px;
+	color: black;
+	outline: 1px solid red;
+}
+
 .features .picture {
 	width: 66.66%;
+}
+
+.feature p {
+	width: 304px;
+	display: inline-block;
+	text-align: center;
+	outline: 1px solid red;
+}
+
+.feature span {
+	margin: 7px;
+	display: block;
+}
+
+.features .common-row {
+	width: 100%;
+	height: 330px;
+	background: #fff;
+	
+	outline: 1px solid red;
+}
+
+.common-row .feature {
+	padding: 59px 0;
+}
+
+.common-row p {
+	margin: 7px 0;
+}
+
+.common-row .icon {
+	margin: 0 auto;
+	width: 74px;
+	height: 74px;
+	margin-bottom: 9px;
+}
+
+.common-row .icon1 {
+	background: url("../img/index/features-sprite.png") no-repeat 0 0;
+}
+
+.common-row .icon2 {
+	background: url("../img/index/features-sprite.png") no-repeat -75px 0;
+}
+
+.common-row .icon3 {
+	background: url("../img/index/features-sprite.png") no-repeat -149px 0;
+}
+
+.features .with-pic {
+	position: relative;
+	overflow: hidden;
+	background: #81b3d2
+}
+
+.with-pic .feature {
+	padding: 36px 0;
+	color: #fff;
+}
+
+.with-pic .picture {
+	padding: 0;
+}
+
+.with-pic span {
+	margin: 7px 0;
+}
+
+.with-pic h2 {
+	color: white;
 }
 
 .hotel-search {
@@ -258,8 +374,104 @@ body.index .main-footer {
 	position: absolute;
 	width: 568px;
 	height: 395px;
+	background: #fff;
+	padding: 55px;
+	box-sizing: border-box;
 	
 	outline: 1px solid red;
+}
+
+.search-form label {
+	font-size: 14px;
+	line-height: 26px;
+	font-weight: bold;
+	margin-right: ;
+}
+
+.search-form input[type="text"] {
+	border: none;
+	background: #f2f2f2;
+	outline: none;
+	height: 38px;
+	width: 326px;
+	padding: 0 10px;
+	font-weight: bold;
+}
+
+.search-form .calendar-btn {
+	position: absolute;
+	top: 7px;
+	right: 8px;
+	width: 24px;
+	height: 24px;
+	border: none;
+	background: #f2f2f2 url("../img/index/cal.png") no-repeat;
+	outline: none;
+}
+
+.arrival-date,
+.departure-date {
+	margin-bottom: 28px;
+	position: relative;
+}
+
+.arrival-date input[type="text"] {
+	margin-left: 19px;
+}
+
+.departure-date input[type="text"] {
+	margin-left: 16px;
+}
+
+.persons {
+	margin-bottom: 54px;
+}
+
+.persons input[type="text"] {
+	width: 38px;
+	padding: 0;
+	text-align: center;
+	margin: 0 -4px;
+}
+
+.persons .group1,
+.persons .group2 {
+	display: inline-block;
+}
+
+.persons .group1 {
+	margin-right: 48px;
+}
+
+.group1 label {
+	margin-right: 37px;
+}
+
+.group2 label {
+	margin-right: 24px;
+}
+
+.persons button {
+	width: 38px;
+	height: 38px;
+	border: none;
+	background: #f2f2f2;
+	outline: none;
+	vertical-align: top;
+	font-weight: bold;
+	font-size: 24px;
+	color: #a9a9a9;
+}
+
+.search-btn {
+	width: 100%;
+	border: none;
+	text-transform: uppercase;
+	font-size: 21px;
+	background-color: #81b3d2;
+	color: #fff;
+	line-height: 58px;
+	vertical-align: middle;
 }
 
 .map {
