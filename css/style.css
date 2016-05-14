@@ -1,13 +1,15 @@
 @font-face {
 	font-family: PTSans;
-	src: url(../fonts/ptsans.woff);
+	src: url(../fonts/ptsans.woff),
+		 url(../fonts/ptsans.woff2);
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: PTSans;
-	src: url(../fonts/ptsansbold.woff);
+	src: url(../fonts/ptsansbold.woff),
+		 url(../fonts/ptsansbold.woff2);
 	font-weight: bold;
 	font-style: normal;
 }
@@ -20,7 +22,7 @@ body {
 
 body {
 	margin: 0 auto;
-	font-family: PTSans;
+	font-family: "PTSans", "Helvetica", "Arial", sans-serif;
 	font-size: 14px;
 	line-height: 21px;
 	color: #000;
@@ -29,15 +31,12 @@ body {
 	text-transform: uppercase;
 }
 
-/* body[class="hotels"] {
-	background: url(../img/sedona-hotels-1200.jpg) no-repeat 50% 0;
-} */
-
 body > .container {
 	position: relative;
 	width: 1200px;
 	margin: 0 auto;
 	background-color: #fff;
+	box-shadow: 0 0 20px -5px;
 }
 
 h1 {
@@ -128,7 +127,7 @@ h2 {
 	clear: both;
 }
 
-.main-footer .footer-block {
+.main-footer .footer-block {	
 	width: 33.33%;
 	float: left;
 	text-align: center;
@@ -143,13 +142,27 @@ h2 {
 }
 
 .main-footer .footer-block3 {
-	padding: 38px 0 29px;
+	padding: 40px 0 27px;
 }
 
-.footer-block:first-child span {
+.footer-block1 span {
+	display: inline-block;
 	font-size: 20px;
+	line-height: 20px;
 	font-weight: bold;
 	vertical-align: middle;
+}
+
+.footer-block3 span{
+	display: inline-block;
+	vertical-align: top;
+	line-height: 35px;
+	margin-right: 3px;
+}
+
+.footer-block3 a {
+	display: inline-block;
+	height: 39px;
 }
 
 .footer-block .btn {
@@ -491,9 +504,30 @@ body.index .main-footer {
 	margin-bottom: 24px;
 }
 
-.checkboxes input {
-	margin-bottom: 30px;
+.checkboxes label {
+	cursor: pointer;
+}
+
+.checkboxes input[type="checkbox"] {
+	display: none;
+}
+
+input[type="checkbox"] + label::before {
+	display: inline-block;
+	vertical-align: top;
+	content: "";
+	width: 18px;
+	height: 18px;
+	border: 2px solid #fff;
+	border-radius: 3px;
+	margin-bottom: 22px;
 	margin-right: 23px;
+	cursor: pointer;
+}
+
+input[type="checkbox"]:checked + label::before {
+	background: url("../img/hotels/sprite-1.png") no-repeat -63px 50%;
+	
 }
 
 .coast .groupe {
@@ -505,14 +539,29 @@ body.index .main-footer {
 
 .coast input {
 	display: inline-block;
-	width: 48%;
-	text-align: center;
+	width: 25%;
+	margin: 5px auto;
+	color: #fff;
+	text-align: left;
 	vertical-align: middle;
-	line-height: 30px;
+	line-height: 20px;
 	outline: none;
 	background: none;
 	text-transform: uppercase;
 	border: none;
+}
+
+.coast input.with-border {
+	border-right: 2px solid #fff;
+}
+
+.coast label {
+	margin: 0;
+	margin-left: 50px;
+	display: inline-block;
+	text-align: right;
+	line-height: 30px;
+	vertical-align: middle;
 }
 
 .coast legend {
@@ -562,6 +611,7 @@ body.index .main-footer {
 	border-radius: 2px;
 	text-transform: uppercase;
 	color: #fff;
+	outline: none;
 }
 
 .main-row {
@@ -596,6 +646,7 @@ body.index .main-footer {
 	margin-left: 8px;
 	height: 10px;
 	border: none;
+	outline: none;
 }
 
 .btns .btn-1 {
@@ -608,12 +659,13 @@ body.index .main-footer {
 
 .hotel-row {
 	padding: 30px 6%;
-	margin-bottom: 2px;
 	border-bottom: 1px solid #e5e5e5;
 }
 
 .hotel-row img {
 	float: left;
+	margin-top: 0;
+	margin-bottom: 0;
 	margin-right: 30px;
 	width: 135px;
 	height: 90px;
@@ -622,9 +674,22 @@ body.index .main-footer {
 .hotel-row h2 {
 	margin: 0;
 	margin-bottom: 2px;
-	width: 500px;
-	
-	outline: 1px solid red;
+	width: 260px;
+	line-height: 16px;
+    vertical-align: top;
+    margin-bottom: 11px;
+}
+
+.hotel-row::after {
+	display: table;
+	clear: both;
+	content: "";
+}
+
+.hotel-row .hotel-description {
+	float: left;
+	margin-top: 0;
+	margin-bottom: 0;
 }
 
 .hotel-row .column {
@@ -643,24 +708,49 @@ body.index .main-footer {
 	color: white;
 	font-weight: bold;
 	font-size: 14px;
-	background: #81b3d2;
 	padding: 0 17px;
 	line-height: 27px;
-	vertical-align: middle;
+	vertical-align: top;
 	margin-top: 14px;
+}
+
+.hotel-row .btn-more {
+	background: #81b3d2;
+}
+
+.hotel-row .btn-book {
+	background: #766357;
 }
 
 .hotel-row .rate {
 	display: block;
 	float: right;
-	outline: 1px solid red;
+	margin-top: 0;
+	margin-bottom: 0;
 	text-align: right;
+	font-size: 0;
+}
+
+.rate .stars {
+	margin-bottom: 34px;
 }
 
 .rate .star {
 	display: inline-block;
+	margin-left: 6px;
 	width: 17px;
 	height: 17px;
-	outline: 1px solid red;
 	background: url("../img/hotels/sprite-1.png") no-repeat -44px 0;
+}
+
+.rate span {
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+	line-height: 28px;
+	font-size: 14px;
+	color: #666;
+	background-color: #f2f2f2;
+	padding: 0 14px;
+	
 }
