@@ -618,7 +618,7 @@ input[type="checkbox"] + label::before {
 }
 
 input[type="checkbox"]:checked + label::before {
-	background: url("../img/hotels/sprite-1.png") no-repeat -85px 50%;
+	background: url("../img/hotels/sprite-1.png") no-repeat -90px 50%;
 }
 
 input[type="checkbox"]:disabled + label::before {
