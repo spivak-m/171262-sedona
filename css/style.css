@@ -44,7 +44,7 @@ h1 {
 }
 
 h2 {
-	font-family: PTSans;
+	font-family: "PTSans", "Helvetica", "Arial", sans-serif;
 	font-size: 21px;
 	line-height: 26px;
 	color: #000;
@@ -71,7 +71,7 @@ h2 {
 	white-space: nowrap;
 	padding: 0;
 	margin: 0;
-	table-layout: fixed
+	table-layout: fixed;
 }
 
 .main-nav li {
@@ -83,6 +83,7 @@ h2 {
 
 .main-nav a {
 	display: inline-block;
+	vertical-align: top;
 	font-size: 14px;
 	line-height: 26px;
 	font-weight: bold;
@@ -173,7 +174,7 @@ h2 {
 	vertical-align: middle;
 }
 
-.footer-block3 span{
+.footer-block3 span {
 	display: inline-block;
 	vertical-align: top;
 	line-height: 35px;
@@ -182,29 +183,31 @@ h2 {
 
 .footer-block3 a {
 	display: inline-block;
+	vertical-align: top;
 	height: 39px;
 }
 
 .footer-block3 img.hovered,
 .footer-block3 img.active,
-.footer-block3 a:hover > .normal{
+.designed:hover > .normal{
 	display: none;
 }
 
-.footer-block3 a:hover > .hovered {
+.designed:hover > .hovered {
 	display: block;
 }
 
-.footer-block3 a:active > .hovered {
+.designed:active > .hovered {
 	display: none;
 }
 
-.footer-block3 a:active > .active {
+.designed:active > .active {
 	display: block;
 }
 
 .footer-block2 a.btn {
 	display: inline-block;
+	vertical-align: top;
 	background-color: rgba(129, 179, 210, 1);
 	width: 47px;
 	height: 47px;
@@ -291,7 +294,7 @@ body.index .main-footer {
 	padding: 28px 0;
 }
 
-.feature h2{
+.feature h2 {
 	display: inline-block;
 	text-align: center;
 	width: 151px;
@@ -464,18 +467,24 @@ body.index .main-footer {
 	background: url("../img/index/cal.png") no-repeat -48px 0;
 }
 
+.arrival-date::after,
+.departure-date::after{
+	content: "";
+	display: table;
+	clear: both;
+} 
+
 .arrival-date,
 .departure-date {
 	margin-bottom: 28px;
 	position: relative;
 }
 
-.arrival-date input[type="text"] {
-	margin-left: 19px;
-}
 
+.arrival-date input[type="text"],
 .departure-date input[type="text"] {
-	margin-left: 16px;
+	float: right;
+	text-transform: uppercase;
 }
 
 .persons {
@@ -492,6 +501,7 @@ body.index .main-footer {
 .persons .group1,
 .persons .group2 {
 	display: inline-block;
+	vertical-align: top;
 }
 
 .persons .group1 {
@@ -533,6 +543,7 @@ body.index .main-footer {
 	font-size: 21px;
 	background-color: #81b3d2;
 	color: #fff;
+	font-weight: bold;
 	line-height: 58px;
 	vertical-align: middle;
 }
@@ -677,8 +688,7 @@ input[type="checkbox" checked]:disabled + label::before {
 .coast-slider .line,
 .coast-slider .inner-line {
 	position: absolute;
-	top: 50%;
-	bottom: 50%;
+	top: 46%;
 	width: 100%;
 	height: 2px;
 	background-color: #8c8080;
@@ -686,19 +696,23 @@ input[type="checkbox" checked]:disabled + label::before {
 
 .coast-slider .inner-line {
 	background-color: #fff;
+	width: 80%;
 }
 
 .coast-slider .min-range,
 .coast-slider .max-range {
 	position: absolute;
-	top: 0%;
-	bottom: 0%;
+	top: 0;
 	width: 4px;
 	height: 4px;
 	border: 8px solid #fff;
 	border-radius: 50px;
 	background-color: #ababab;
 	cursor: pointer;
+}
+
+.coast-slider .max-range {
+	left: 80%;
 }
 
 .coast-slider .min-range:hover,
@@ -731,6 +745,7 @@ input[type="checkbox" checked]:disabled + label::before {
 
 .main-row h2 {
 	display: inline-block;
+	vertical-align: middle;
 	margin-right: 44px;
 }
 
@@ -766,11 +781,14 @@ input[type="checkbox" checked]:disabled + label::before {
 .main-row .btns{
 	margin-top: 20px;
 	float: right;
+	font-size: 0;
 }
 
-.btns button {
+.btns a {
+	display: inline-block;
+	vertical-align: middle;
 	width: 12px;
-	margin-left: 8px;
+	margin: 0;
 	height: 10px;
 	border: none;
 	outline: none;
@@ -778,6 +796,7 @@ input[type="checkbox" checked]:disabled + label::before {
 }
 
 .btns .btn-1 {
+	margin-right: 12px;
 	background: url(../img/hotels/sprite-1.png) no-repeat -11px 50%;
 }
 
@@ -832,8 +851,8 @@ input[type="checkbox" checked]:disabled + label::before {
 	margin-bottom: 2px;
 	width: 260px;
 	line-height: 16px;
-    vertical-align: top;
-    margin-bottom: 11px;
+	vertical-align: top;
+	margin-bottom: 11px;
 }
 
 .hotel-description > a {
@@ -862,6 +881,7 @@ input[type="checkbox" checked]:disabled + label::before {
 
 .hotel-row .column {
 	display: inline-block;
+	vertical-align: top;
 	margin-right: 2px;
 }
 
@@ -918,11 +938,12 @@ input[type="checkbox" checked]:disabled + label::before {
 }
 
 .rate .stars {
-	margin-bottom: 34px;
+	margin-bottom: 41px;
 }
 
 .rate .star {
 	display: inline-block;
+	vertical-align: top;
 	margin-left: 6px;
 	width: 17px;
 	height: 17px;
@@ -931,7 +952,7 @@ input[type="checkbox" checked]:disabled + label::before {
 
 .rate span {
 	display: inline-block;
-	vertical-align: middle;
+	vertical-align: top;
 	text-align: center;
 	line-height: 28px;
 	font-size: 14px;
